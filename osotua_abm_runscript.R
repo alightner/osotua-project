@@ -14,7 +14,7 @@ init_herdsize <- 70
 
 # uncomment and source to run
 
-#source('~/Desktop/Docs/PhD projects/Osotua ABM model/osotua_abm/pairwise_osotua.R')
+#source('pairwise_osotua.R')
 
 df <- data.frame(df); colnames(df) <- c('stock1','stock2','dead1','dead2')
 mdt <- data.frame(mdt); colnames(mdt) <- c('t', 'p1_stock','p2_stock','p1_req', 'p2_req')
@@ -40,7 +40,7 @@ init_herdsize <- 70
 dfpr <- 0.5  # probability of defection
 defect_node <- 1
 
-#source('~/Desktop/Docs/PhD projects/Osotua ABM model/osotua_abm/pairwise_defect.R')
+#source('pairwise_defect.R')
 
 df <- data.frame(df); colnames(df) <- c('stock1','stock2','dead1','dead2')
 mdt <- data.frame(mdt); colnames(mdt) <- c('t', 'p1_stock','p2_stock','p1_req', 'p2_req')
@@ -66,7 +66,7 @@ init_herdsize <- 70
 dfpr <- 0.5  # probability of defection
 defect_node <- c(1,2)
 
-#source('~/Desktop/Docs/PhD projects/Osotua ABM model/osotua_abm/pairwise_mutual_defect.R')
+#source('pairwise_mutual_defect.R')
 
 df <- data.frame(df); colnames(df) <- c('stock1','stock2','dead1','dead2')
 mdt <- data.frame(mdt); colnames(mdt) <- c('t', 'p1_stock','p2_stock','p1_req', 'p2_req')
@@ -89,7 +89,7 @@ init_herdsize <- 70
 
 # uncomment and source to run
 
-#source('~/Desktop/Docs/PhD projects/Osotua ABM model/osotua_abm/pairwise_noexchange.R')
+#source('pairwise_noexchange.R')
 
 df <- data.frame(df); colnames(df) <- c('stock1','stock2','dead1','dead2')
 mdt <- data.frame(mdt); colnames(mdt) <- c('t', 'p1_stock','p2_stock','p1_req', 'p2_req')
