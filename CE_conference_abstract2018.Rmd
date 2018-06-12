@@ -1,0 +1,66 @@
+---
+title: "Need-based transfers and defection strategies"
+output:
+  word_document: default
+  html_document:
+    df_print: paged
+---
+
+### Abstract draft
+
+Humans everywhere develop cultural institutions for navigating uncertainty and risk. Osotua, for example, is a need-based resource sharing institution among Kenyan and Tanzanian Maasai pastoralists, and previous agent-based simulations demonstrated its value as a risk pooling solution to herd survival in highly unpredictable ecologies (e.g., Aktipis et al. 2011; Hao et al. 2015; Aktipis et al. 2016). However, it is not clear how susceptible this risk-pooling solution is to "cheating", or defection strategies. The existence of taboos toward feigning need in osotua points to this possibility (e.g., Cronk 2007). While previous explanations have focused on the public nature of wealth associated with NBT (e.g., cattle), interviews with a Maasai field informant suggest that the scope of osotua goes beyond publicly observable goods. We hypothesize that cheater prevention is therefore not completely straightforward in NBT, and existing models should therefore go beyond assumptions of mutual cooperation between partners.
+
+Need-based transfers (NBT) consist of 2 rules: (1) ask for resources only when in need, and (2) when asked, give as much as possible without becoming needy. In a pilot study to motivate future empirical work, we replicated the results of a model that was central to previous insights on osotua (Aktipis et al. 2011). We then include our own contribution: defection strategies for either one or both partners in the model. There are multiple possible ways to defect in osotua: (1) feigning need and asking for resources that are not needed, and/or (2) refusing to give when someone is in need. (Here we focus only on violating rule 1: feigning need.)
+
+Extending the pairwise model of need-based exchange in Aktipis et al. (2011), we include the "no exchange" control condition and mutually cooperative (CC) need-based transfer conditions, plus our added cooperate vs. defect (CD), and mutual defection (DD) conditions. The results indicate that defecting by feigning need is highly rewarding when used against a cooperator (DC), at the expense of the cooperator (CD). Mutual defection (DD) is initially more rewarding than mutual cooperation (CC), but long-run outcomes among mutual cooperators eventually surpass those of mutual defectors (figure 1). Taken together, these findings point to a need to explain the possible underlying mechanisms that provide motivation to cooperate/not defect in need-based institutions like osotua.
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(igraph)
+library(ggsci)
+
+dk <- read_csv('osotua_survivalcurves.csv')
+ggplot(dk, aes(x=x, y=y, colour=factor(type))) + geom_line() +
+  scale_color_igv() + 
+  ylim(c(0,1)) + theme_bw() + labs(x='time', y='proportion of years surviving',
+                                   colour='strategy')
+```
+
+**Figure 1.** Survivorship of herds in each condition/strategy. Average herd duration in standard osotua (CC) condition (blue) is significantly longer than the no exchange condition, but defection is a more profitable short-term strategy. Average duration of mutual defection (DD) is shorter than that of standard osotua, whereas defection against a cooperator (DC) profits at the expense of the cooperator (CD).
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+df <- read_csv('df_noexchange.csv')
+ggplot(df, aes(x=dead1, y=dead2)) + geom_point(alpha=0.1) + theme_bw() + labs(x='Survival 1', y='Survival 2')
+```
+
+**Figure 2.** Survival (in years) of partner 2 as a function of survival of partner 1 in the "no exchange" control condition. Outcomes are uncorrelated for both partners.
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+df <- read_csv('df_osotua_cc.csv')
+ggplot(df, aes(x=dead1, y=dead2)) + geom_point(alpha=0.1) + theme_bw() + labs(x='Survival 1', y='Survival 2')
+```
+
+**Figure 3.** Survival (in years) of partner 2 as a function of survival of partner 1 in the standard/replicated (mutually cooperative) osotua condition. Outcomes are correlated for both partners as a result of risk pooling. 
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+df <- read_csv('df_osotua_dc_defect1coop2.csv')
+ggplot(df, aes(x=dead1, y=dead2)) + geom_point(alpha=0.1) + theme_bw() + labs(x='Survival 1', y='Survival 2')
+```
+
+**Figure 4.** Survival (in years) of partner 2 as a function of survival of partner 1 in the defector (partner 2) vs. cooperator (partner 1) osotua condition. Outcomes are correlated for both partners as a result of risk pooling, but average outcomes for partner 1 (cooperator) can only be strictly less than those of partner 2 (defector).
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+df <- read_csv('df_osotua_dd.csv')
+ggplot(df, aes(x=dead1, y=dead2)) + geom_point(alpha=0.1) + theme_bw() + labs(x='Survival 1', y='Survival 2')
+```
+
+**Figure 5.** Survival (in years) of partner 2 as a function of survival of partner 1 in the mutual defection osotua condition. Outcomes are almost perfectly correlated for both partners as a result of wealth pooling that results from both individuals repeatedly feigning need (defection strategy), in contrast to the risk pooling that results from asking only when in need (cooperative strategy).
+
+
+
+
