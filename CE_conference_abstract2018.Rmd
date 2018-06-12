@@ -35,7 +35,7 @@ df <- read_csv('df_noexchange.csv')
 ggplot(df, aes(x=dead1, y=dead2)) + geom_point(alpha=0.1) + theme_bw() + labs(x='Survival 1', y='Survival 2')
 ```
 
-**Figure 2.** Survival (in years) of partner 2 as a function of survival of partner 1 in the "no exchange" control condition. Outcomes are uncorrelated for both partners.
+**Figure 2.** Survival (in years) of partner 2 as a function of survival of partner 1 in the "no exchange" control condition. Outcomes per simulation run (n=10,000) are uncorrelated for both partners.
 
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
@@ -43,7 +43,7 @@ df <- read_csv('df_osotua_cc.csv')
 ggplot(df, aes(x=dead1, y=dead2)) + geom_point(alpha=0.1) + theme_bw() + labs(x='Survival 1', y='Survival 2')
 ```
 
-**Figure 3.** Survival (in years) of partner 2 as a function of survival of partner 1 in the standard/replicated (mutually cooperative) osotua condition. Outcomes are correlated for both partners as a result of risk pooling. 
+**Figure 3.** Survival (in years) of partner 2 as a function of survival of partner 1 in the standard/replicated (mutually cooperative) osotua condition. Outcomes per simulation run (n=10,000) are correlated for both partners as a result of risk pooling. 
 
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
@@ -51,7 +51,7 @@ df <- read_csv('df_osotua_dc_defect1coop2.csv')
 ggplot(df, aes(x=dead1, y=dead2)) + geom_point(alpha=0.1) + theme_bw() + labs(x='Survival 1', y='Survival 2')
 ```
 
-**Figure 4.** Survival (in years) of partner 2 as a function of survival of partner 1 in the defector (partner 2) vs. cooperator (partner 1) osotua condition. Outcomes are correlated for both partners as a result of risk pooling, but average outcomes for partner 1 (cooperator) can only be strictly less than those of partner 2 (defector).
+**Figure 4.** Survival (in years) of partner 2 as a function of survival of partner 1 in the defector (partner 2) vs. cooperator (partner 1) osotua condition. Outcomes per simulation run (n=10,000) are correlated for both partners as a result of risk pooling, but average outcomes for partner 1 (cooperator) can only be strictly less than those of partner 2 (defector).
 
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
@@ -59,7 +59,7 @@ df <- read_csv('df_osotua_dd.csv')
 ggplot(df, aes(x=dead1, y=dead2)) + geom_point(alpha=0.1) + theme_bw() + labs(x='Survival 1', y='Survival 2')
 ```
 
-**Figure 5.** Survival (in years) of partner 2 as a function of survival of partner 1 in the mutual defection osotua condition. Outcomes are almost perfectly correlated for both partners as a result of wealth pooling that results from both individuals repeatedly feigning need (defection strategy), in contrast to the risk pooling that results from asking only when in need (cooperative strategy).
+**Figure 5.** Survival (in years) of partner 2 as a function of survival of partner 1 in the mutual defection osotua condition. Outcomes per simulation run (n=10,000) are almost perfectly correlated for both partners as a result of wealth pooling that results from both individuals repeatedly feigning need (defection strategy), in contrast to the risk pooling that results from asking only when in need (cooperative strategy).
 
 
 
